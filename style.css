@@ -59,6 +59,7 @@ body {
 #overlay {
   height: 100vh;
   background-image: var(--body-bg);
+  overflow: hidden;
 }
 .d-translate {
   transform: translateY(-100%);
@@ -67,6 +68,7 @@ body {
 .d-none {
   display: none;
 }
+
 #overlay .input_controls {
   background-color: var(--btn-bg);
   margin-bottom: 1rem;
@@ -88,7 +90,8 @@ body {
 /* game */
 #game {
   background-image: var(--body-bg);
-  height: 0vh;
+  height: 0;
+  overflow: hidden;
   transform: translateY(-100%);
   transition: 0.5s ease-in-out;
 }
@@ -107,6 +110,7 @@ body {
 }
 #player h4 {
   padding: 0 1rem;
+  text-transform: uppercase;
 }
 #player .range {
   margin: 0.5rem 0;
