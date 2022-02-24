@@ -31,6 +31,17 @@ function init() {
   activePlayer = 0;
   score = [0, 0];
   playing = true;
+
+  document.getElementById(`current--0`).textContent = 0;
+  document.getElementById(`current--1`).textContent = 0;
+  document.getElementById('diceImg').src = './dice-6.png';
+  document.getElementById(`scoreFill-0`).style.width = 0;
+  document.getElementById(`scoreFill-1`).style.width = 0;
+  document.querySelector(`.player--0`).classList.add(`activePlayer`);
+  document.querySelector(`.player--1`).classList.remove(`activePlayer`);
+  document.querySelector(`.player--0`).classList.remove(`winner`);
+  document.querySelector(`.player--1`).classList.remove(`winner`);
+  btnNew.classList.remove('tryAgain');
 }
 init();
 // rolling function
@@ -50,7 +61,6 @@ btnRoll.addEventListener('click', function () {
       if (diceNumber !== 1) {
         // update currentScore
         currentScore += diceNumber;
-        console.log(diceNumber);
         document.getElementById(`current--${activePlayer}`).textContent =
           currentScore;
       } else {
@@ -86,6 +96,9 @@ btnHold.addEventListener('click', function () {
     document
       .querySelector(`.player--${activePlayer}`)
       .classList.add(`player--winner`);
+
+    document.querySelector(`.player--${activePlayer}`).classList.add(`winner`);
+
     //   removing active class
     document
       .querySelector(`.player--${activePlayer}`)
@@ -95,3 +108,6 @@ btnHold.addEventListener('click', function () {
     switchPlayer();
   }
 });
+
+// // Reset Game
+btnNew.addEventListener('click', init);
