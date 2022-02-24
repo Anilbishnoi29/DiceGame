@@ -11,6 +11,9 @@
   --box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
   --color: #fff;
 }
+button {
+  outline: none;
+}
 /* body */
 body {
   font-family: 'Nunito', sans-serif;
