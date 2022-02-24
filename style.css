@@ -123,7 +123,7 @@ body {
 }
 #player .score--fill {
   background-color: #bf2e34;
-  width: 50%;
+  width: 0%;
   height: 5px;
   border-radius: 1rem;
 }
@@ -131,10 +131,61 @@ body {
 .tryBtn {
   padding: 1rem;
 }
+.tryAgain {
+  animation: glow 1s infinite;
+  transition: 0.5s;
+}
+@keyframes glow {
+  0% {
+    box-shadow: 5px 5px 20px rgb(81, 224, 210), -5px -5px 20px rgb(81, 224, 210);
+  }
+
+  50% {
+    box-shadow: 5px 5px 20px rgba(81, 224, 210, 0),
+      -5px -5px 20px rgba(81, 224, 210, 0);
+  }
+  100% {
+    box-shadow: 5px 5px 20px rgb(81, 224, 210), -5px -5px 20px rgb(81, 224, 210);
+  }
+}
+/* dice img */
 .diceImg img {
   width: 100px;
   height: 100px;
   border-radius: 1rem;
+}
+.rolling {
+  animation: rolling 1s infinite;
+  background-size: 100%;
+}
+@keyframes rolling {
+  0% {
+    background-image: url(./dice-1.png);
+  }
+  15% {
+    background-image: url(./dice-2.png);
+  }
+  30% {
+    background-image: url(./dice-5.png);
+  }
+  45% {
+    background-image: url(./dice-4.png);
+  }
+  60% {
+    background-image: url(./dice-6.png);
+  }
+  60% {
+    background-image: url(./dice-4.png);
+  }
+  75% {
+    background-image: url(./dice-3.png);
+  }
+  88% {
+    background-image: url(./dice-1.png);
+  }
+  100% {
+    background-image: url(./dice-6.png);
+  }
 }
 /* current */
 .current {
@@ -146,4 +197,24 @@ body {
 /*  */
 .diceBtn {
   padding: 1rem;
+}
+
+/* active Player */
+.activePlayer h4 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.activePlayer h4::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  border-radius: 1rem;
+  background-color: #04aa6d;
+  display: block;
+  position: absolute;
+  left: 12px;
 }
