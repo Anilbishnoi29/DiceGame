@@ -97,9 +97,10 @@ body {
   transition: 0.5s ease-in-out;
 }
 #game.d-translate-game {
-  height: 550px;
+  min-height: 550px;
   transform: translateY(0%);
   transition: 0.5s ease-in-out;
+  height: 100vh;
 }
 /* player */
 #player {
